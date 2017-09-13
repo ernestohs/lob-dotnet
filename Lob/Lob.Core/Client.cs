@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
@@ -19,18 +20,33 @@ namespace Lob.Core
                 Version = version;
             }
 
+            if (apikey != null)
+            {
+                ApiKey = apikey;
+            }
+
             _client = new RestClient
             {
                 Encoding = Encoding.UTF8,
                 BaseUrl = new Uri("https://api.lob.com/"),
-                Authenticator = new ApiKeyAuthenticator(ApiKey, Version)
+                Authenticator = new ApiKeyAuthenticator(ApiKey, Version),
+                UserAgent = "lob-net"
             };
         }
 
-        public Task<T> Get<T>(string resource) where T : class, new()
+        public Task<T> Get<T>(string resource, IEnumerable<KeyValuePair<string, object>> parameters = null)
+            where T : class, new()
         {
             IRestRequest request = new RestRequest();
             request.Resource = resource;
+
+            if (parameters == null) return _client.GetTaskAsync<T>(request);
+            
+            foreach (var parameter in parameters)
+            {
+                request.AddParameter(parameter.Key, parameter.Value);
+            }
+
             return _client.GetTaskAsync<T>(request);
         }
 

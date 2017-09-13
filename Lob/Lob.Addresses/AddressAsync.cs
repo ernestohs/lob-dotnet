@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
 using System.Threading.Tasks;
@@ -25,9 +26,13 @@ namespace Lob.Addresses
             return Client.Get<AddressResponse>(string.Format("addresses/{0}", addressId));
         }
 
-        Task<IQueryable<AddressResponse>> GetAllAsync()
+        Task<AddressListResponse> GetAllAsync(int offset = 0, int limit = 10)
         {
-            throw new NotImplementedException("We need to define a clean API");
+            return Client.Get<AddressListResponse>("addresses", new List<KeyValuePair<string, object>>
+            {
+                new KeyValuePair<string, object>(nameof(offset), offset),
+                new KeyValuePair<string, object>(nameof(limit), limit)
+            });
         }
 
         Task<AddressResponse> DeleteAsync(string addressId)
