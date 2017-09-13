@@ -9,9 +9,15 @@ namespace Lob.Core
         private readonly RestClient _client;
 
         public string ApiKey { get; set; }
+        public string Version { get; set; }
 
-        public Client()
+        public Client(string apikey = null, string version = null)
         {
+            if (version != null)
+            {
+                Version = version;
+            }
+            
             _client = new RestClient
             {
                 Encoding = Encoding.UTF8,
