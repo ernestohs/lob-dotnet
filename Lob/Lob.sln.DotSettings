@@ -1,0 +1,6 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=18EF6DBBB0C5434BA6DE033EE0423016/AbsolutePath/@EntryValue">C:\Users\ernesto.herrera\Code\lob-dotnet\Lob\Lob.DotSettings</s:String>
+	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=18EF6DBBB0C5434BA6DE033EE0423016/RelativePath/@EntryValue">..\Lob.DotSettings</s:String>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=18EF6DBBB0C5434BA6DE033EE0423016/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File18EF6DBBB0C5434BA6DE033EE0423016/@KeyIndexDefined">True</s:Boolean>
+	<s:Double x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File18EF6DBBB0C5434BA6DE033EE0423016/RelativePriority/@EntryValue">1</s:Double></wpf:ResourceDictionary>

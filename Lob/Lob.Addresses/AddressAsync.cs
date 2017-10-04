@@ -23,7 +23,7 @@ namespace Lob.Addresses
 
         Task<AddressResponse> Get(string addressId)
         {
-            return Client.Get<AddressResponse>(string.Format("addresses/{0}", addressId));
+            return Client.Get<AddressResponse>($"addresses/{addressId}");
         }
 
         Task<AddressListResponse> GetAllAsync(int offset = 0, int limit = 10)
@@ -37,7 +37,7 @@ namespace Lob.Addresses
 
         Task<AddressResponse> DeleteAsync(string addressId)
         {
-            return Client.Delete<AddressResponse>(string.Format("addresses/{0}", addressId));
+            return Client.Delete<AddressResponse>($"addresses/{addressId}");
         }
     }
 }

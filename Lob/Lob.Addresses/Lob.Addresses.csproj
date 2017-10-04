@@ -1,7 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
+    <RepositoryUrl>https://github.com/ernestohs/lob-dotnet</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/lob</PackageProjectUrl>
+    <PackageIconUrl>https://lob.com/favicon.ico</PackageIconUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lob.Core\Lob.Core.csproj" />
   </ItemGroup>
